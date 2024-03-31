@@ -3,8 +3,16 @@ import { Box, Button, Paper, Typography } from "@mui/material";
 import React from "react";
 
 const ProjectsModel = ({ name, logo, desc }) => {
+  function handleMouseOver(event) {
+    event.target.style.background = "red";
+  }
+  function handleMouseOut(event) {
+    event.target.style.background = "";
+  }
   return (
     <Paper
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
       sx={{
         width: "45%",
         height: "100%",

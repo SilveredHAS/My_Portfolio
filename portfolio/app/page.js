@@ -6,6 +6,7 @@ import Home from "@/components/home";
 import AboutMe from "@/components/aboutMe";
 import Skills from "@/components/skills";
 import Projects from "@/components/projects";
+import OnScrollAnimation from "@/components/animation/onScrollAnimation";
 
 const page = () => {
   return (

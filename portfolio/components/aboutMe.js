@@ -2,6 +2,8 @@ import { PRIMARY_GREEN } from "@/constants";
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import ProfileImage from "../public/asset/image/ProfileImage.jpg";
+import { motion } from "framer-motion";
+import OnScrollAnimation from "./animation/onScrollAnimation";
 
 const AboutMe = () => {
   const details = {
@@ -43,42 +45,48 @@ const AboutMe = () => {
         />
       </Box>
       <Box sx={{ color: "white", width: "45%" }}>
-        <Typography
-          variant="h3"
-          sx={{ color: PRIMARY_GREEN, fontWeight: "700" }}
-        >
-          About Me
-        </Typography>
-        <Typography variant="subtitle1" sx={{ fontWeight: "500" }}>
-          A small river named Duden flows by their place and supplies it with
-          the necessary regelialia.A small river named Duden flows by their
-          place and supplies it with the necessary regelialia.A small river
-          named Duden flows by their place and supplies it with the necessary
-          regelialia.A small river named Duden flows by their place and supplies
-          it with the necessary regelialia.
-        </Typography>
-        <Box sx={{ mt: 5 }}>
-          {Object.keys(details).map((key) => (
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "flex-start",
-                mt: 1,
-                mb: 1,
-              }}
-            >
-              <Typography variant="subtitle1" sx={{ width: "25%" }}>
-                {key}:
-              </Typography>
+        <OnScrollAnimation
+          children={
+            <Box>
               <Typography
-                variant="subtitle1"
-                sx={{ width: "60%", color: "#999999" }}
+                variant="h3"
+                sx={{ color: PRIMARY_GREEN, fontWeight: "700" }}
               >
-                {details[key]}
+                About Me
               </Typography>
+              <Typography variant="subtitle1" sx={{ fontWeight: "500" }}>
+                A small river named Duden flows by their place and supplies it
+                with the necessary regelialia.A small river named Duden flows by
+                their place and supplies it with the necessary regelialia.A
+                small river named Duden flows by their place and supplies it
+                with the necessary regelialia.A small river named Duden flows by
+                their place and supplies it with the necessary regelialia.
+              </Typography>
+              <Box sx={{ mt: 5 }}>
+                {Object.keys(details).map((key) => (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      mt: 1,
+                      mb: 1,
+                    }}
+                  >
+                    <Typography variant="subtitle1" sx={{ width: "25%" }}>
+                      {key}:
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      sx={{ width: "60%", color: "#999999" }}
+                    >
+                      {details[key]}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
             </Box>
-          ))}
-        </Box>
+          }
+        />
       </Box>
     </Box>
   );

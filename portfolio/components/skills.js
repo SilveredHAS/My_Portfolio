@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import SkillsModel from "./skillsModel";
 import ProfileImage from "../public/asset/image/ProfileImage.jpg";
+import OnScrollAnimation from "./animation/onScrollAnimation";
 
 const Skills = () => {
   return (
